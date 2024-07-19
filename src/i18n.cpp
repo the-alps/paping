@@ -17,7 +17,8 @@ pcc_t i18n_c::GetString(int id)
 														"     --nocolor\tDisable color output\n"
 														" -t, --timeout\ttimeout in milliseconds (default 1000)\n"
 														" -c, --count N\tset number of checks to N\n"
-														"     --ip-bind\tset source ip address\n";
+														"     --ip-bind\tset source ip address\n"
+														"     --break\tonce connected\n";
 
 		case STRING_STATS:						return	"\n"
 														"Connection statistics:\n"

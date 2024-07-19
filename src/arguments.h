@@ -12,6 +12,7 @@ class arguments_c
 		int		Count;
 		bool	Continous;
 		bool	UseColor;
+		bool	Break;
 
 		static	void	PrintBanner();
 		static	void	PrintUsage();

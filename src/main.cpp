@@ -90,6 +90,7 @@ int main(int argc, pc_t argv[])
 			stats.UpdateMaxMin(time);
 
 			printSuccessfulConnection(host, time);
+			if(arguments.Break)break;
 		}
 		else
 		{

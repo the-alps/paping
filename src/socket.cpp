@@ -1,6 +1,7 @@
 #include "standard.h"
 
 using namespace std;
+bool Break=false;
 
 int socket_c::Resolve(pcc_t hostname, host_c &host)
 {
@@ -86,7 +87,8 @@ int socket_c::Connect(host_c host, int timeout, double &time)
 	localaddr.sin_family = AF_INET;
 	localaddr.sin_addr.s_addr = host.Source;
 	localaddr.sin_port = 0;
-	bind(clientSocket, (struct sockaddr *)&localaddr, sizeof(localaddr));
+	if(bind(clientSocket, (struct sockaddr *)&localaddr, sizeof(localaddr))<0)
+		return ERROR_SOCKET_GENERALFAILURE;
 
 	sockaddr_in	clientAddress;
 

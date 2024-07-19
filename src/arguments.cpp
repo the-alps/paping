@@ -30,6 +30,7 @@ int	arguments_c::Process(int argc, pc_t argv[], arguments_c &arguments)
 	arguments.Type		= IPPROTO_TCP;
 	arguments.Continous	= true;
 	arguments.UseColor	= true;
+	arguments.Break		= false;
 
 	for (int i=1; i<argc; i++)
 	{
@@ -48,6 +49,8 @@ int	arguments_c::Process(int argc, pc_t argv[], arguments_c &arguments)
 
 		if (result = arguments_c::match(i, argc, argv, NULL, "--nocolor", false, value, anyMatch) != SUCCESS) return result;
 		if (value == 1) arguments.UseColor = false;
+		value=0;if (result = arguments_c::match(i, argc, argv, NULL, "--break", false, value, anyMatch) != SUCCESS) return result;
+		if (value == 1) arguments.Break = true;
 
 
 		if (!anyMatch)
